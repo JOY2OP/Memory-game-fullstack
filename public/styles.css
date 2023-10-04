@@ -1,0 +1,42 @@
+*{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.pageContainer{  
+    /* flex-grow:3;    */
+    width: 800px;
+    margin: 0 auto;
+}
+
+.gameGrid{
+    display:flex;
+    flex-wrap: wrap;
+    height: 608px;
+    width: 100%;
+    /* border: 1px solid black; */
+    /* centers the cards */
+    justify-content: center; 
+    align-items: center;
+}
+
+/* each card class */
+.cardClass{
+    height: 150px;
+    width: 150px;
+    background-color: aqua;
+    border: 1px solid black;
+    cursor: pointer;
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 20px;
+    margin: 2px;
+
+}
+
+.bigEmoji{
+    font-size: 5rem;
+}
+
+p {padding-top: 1rem}
