@@ -1,4 +1,4 @@
-//current problem: Not able to import export functions to use it on UI.
+//current problem: Not able to import export functions to other files to use it on UI.
 // import {incrementAttempts} from './public/logic.mjs'
 const incrementAttempts  = require('./public/logic');
 
