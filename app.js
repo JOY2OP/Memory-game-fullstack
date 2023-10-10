@@ -1,4 +1,5 @@
 //current problem: Not able to import export functions to use it on UI.
+//Node js doesn't have access to DOM, use vite or something
 // import {incrementAttempts} from './public/logic.mjs'
 const incrementAttempts  = require('./public/logic');
 
