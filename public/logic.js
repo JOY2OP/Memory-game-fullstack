@@ -3,10 +3,13 @@ const attemptsHolder = document.querySelector('.attemptsHolder');
 const foundHolder = document.querySelector('.foundHolder');
 
 
-const emojiList = ['😀','👽','🦄','👀','👏','🤸‍♂️','🧬','🍿','🍌','🪀']
-const fullEmojiList = [...emojiList, ...emojiList];  
+// const emojiList = ['😀','👽','🦄','👀','👏','🤸‍♂️','🧬','🍿','🍌','🪀'];
+const emojiList = ['😀','👽'];
 
-const cardsInGame = 20;
+const fullEmojiList = [...emojiList, ...emojiList];
+
+// const cardsInGame = 20;
+const cardsInGame = 4;
 
 let attempts =  0; //Increase the counter with every attempt
 let foundCards = 0; //Increase the counter when a match is found
@@ -38,7 +41,6 @@ function initiateBoard(){
     }    
 }
 
-
 //Check if the card is already flipped
     function flipCard() {
         let cardId = this.getAttribute('data-id'); //this = div = card
@@ -65,19 +67,26 @@ function initiateBoard(){
     function incrementAttempts(){
         attempts++;
         attemptsHolder.textContent = attempts;
-        }
+        return attempts;
+    }
+
 
 // Function to check if the chosen cards match
     function checkForMatch() {
         const [card1, card2] = chosenCards;
         const [cardId1, cardId2] = chosenCardsIds;
 
+        const attempts= incrementAttempts()
         // If the cards match, update foundCards count and display
         if (card1 === card2) {
             foundCards += 2;
             foundHolder.textContent = foundCards;
             if (foundCards === cardsInGame) {
-                setTimeout(()=>{alert('Congratulations! You found all the pairs.')},0);
+                // const final = attempts;
+                setTimeout(()=>{
+                    alert(`Congratulations! You found all the pairs in ${attempts} attempts.`);
+                },0);
+         
             }
         } else {
             // If the cards don't match, flip them back
@@ -94,6 +103,6 @@ function initiateBoard(){
     }
 
 
-module.exports = {incrementAttempts}
-initiateBoard();
-// export {incrementAttempts}
+    initiateBoard();
+    // module.exports = {attempts, incrementAttempts, checkForMatch}
+    // export {incrementAttempts}
